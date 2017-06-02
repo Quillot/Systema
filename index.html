@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Systema</title>
+	<style type="text/css">
+		#display {
+			background-color: black;
+			width: 200px;
+			height: 200px;
+		}
+	</style>
+	<script type="text/javascript">
+		// Wait for document to load before getting the select options
+		document.addEventListener("DOMContentLoaded", function(event) { 
+			var colorOptions = document.getElementById('colors');
+			colorOptions.addEventListener("change", update);
+		});
+
+		// Update when the select is changed
+		function update() {
+			var display = document.getElementById("display");
+			display.style.backgroundColor = this.value;
+		}
+	</script>
+</head>
+<body>
+	<div id="ui">
+		<select id="colors">
+			<option value="red">Red</option>
+			<option value="green">Green</option>
+			<option value="blue">Blue</option>
+		</select>
+	</div>
+
+	<div id="display">
+		<!-- The display -->
+	</div>
+</body>
+</html>
